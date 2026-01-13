@@ -23,7 +23,7 @@ The repository is organized as follows:
 
 - **`franka_example_controllers/`**  
   ROS 2 C++ package containing example controllers for the Franka Panda robot.
-  - `ExerciseCartesianImpedanceController/`  
+  - `ros2_control` plugin `ExerciseCartesianImpedanceController`  
     Skeleton implementation of a Cartesian impedance controller to be completed by the student.  
     It includes:
     - header files defining the controller interface, gains, and internal state,
