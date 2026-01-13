@@ -7,6 +7,17 @@ It includes three hands-on laboratory modules covering ROS 2 fundamentals, mobil
 
 A **detailed, step-by-step guide to the practical sessions** is provided in **`Lab-notes.pdf`**, which should be considered the primary reference during the labs.
 
+<table>
+  <tr>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/084db2c7-10d7-412e-8d61-c911f514b09c" controls muted playsinline style="width:100%; height:auto;"></video>
+    </td>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/eedb09ed-d2c6-4c21-8885-e0bd58a195fa" controls muted playsinline style="width:100%; height:auto;"></video>
+    </td>
+  </tr>
+</table>
+
 ## Docker images
 
 All labs run inside pre-configured Docker containers to ensure a consistent and reproducible environment.
