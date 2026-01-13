@@ -126,22 +126,16 @@ class Point2PointNav(Node):
         try:
             # ------------------------------------------------------------
             # TODO: get world_frame -> base_frame from the tf_buffer
-            tf = self.tf_buffer.lookup_transform(
-                target_frame=self.world_frame,
-                source_frame=self.base_frame,
-                time=rclpy.time.Time(),
-                timeout=Duration(seconds=0.2),
-            )
+            # ...
+            pass
             # ------------------------------------------------------------
         except Exception:
             return None
 
         # ------------------------------------------------------------
         # TODO: return x, y, yaw (TIP: use yaw_from_quat)
-        x = tf.transform.translation.x
-        y = tf.transform.translation.y
-        yaw = yaw_from_quat(tf.transform.rotation)
-        return (x, y, yaw)
+        # ...
+        pass
         # ------------------------------------------------------------
 
     # ----------------------------
@@ -151,12 +145,8 @@ class Point2PointNav(Node):
         """Goal topic cb: store goal and set state to GO_TO_GOAL."""
         # ------------------------------------------------------------
         # TODO: store msg in self.goal and set self.state to "GO_TO_GOAL"
-        self.goal = msg
-        self.state = "GO_TO_GOAL"
-        self.get_logger().info(
-            "Goal received: "
-            f"({msg.pose.position.x:.2f}, {msg.pose.position.y:.2f})"
-        )
+        # ...
+        pass
         # ------------------------------------------------------------
 
     # ----------------------------
@@ -166,9 +156,8 @@ class Point2PointNav(Node):
         """Compute distance of (x, y) from current goal."""
         # ------------------------------------------------------------
         # TODO: compute the distance from (x, y) to self.goal
-        gx = self.goal.pose.position.x
-        gy = self.goal.pose.position.y
-        return math.sqrt((gx - x)**2 + (gy - y)**2)
+        # ...
+        pass
         # ------------------------------------------------------------
 
     # ----------------------------
@@ -189,19 +178,8 @@ class Point2PointNav(Node):
         """Publish a twist msg that drives the robot towards the goal."""
         # ------------------------------------------------------------
         # TODO: publish a cmd that_vel to go to the goal
-        gx = self.goal.pose.position.x
-        gy = self.goal.pose.position.y
-
-        desired = math.atan2(gy - y, gx - x)
-        err = angle_wrap(desired - yaw)
-
-        # Simple proportional steering: turn more if angle error is large
-        wz = clamp(err * 1.5, -self.angular_speed, self.angular_speed)
-
-        # Slow down if not facing goal
-        vx = self.linear_speed * max(0.0, 1.0 - abs(err) / math.radians(70))
-
-        self.publish_cmd(vx, wz)
+        # ...
+        pass
         # ------------------------------------------------------------
 
     # ----------------------------
@@ -224,12 +202,8 @@ class Point2PointNav(Node):
     
         # ------------------------------------------------------------
         # TODO: stop if goal reached, or continue going to the goal
-        if self.goal_distance(x, y) < self.goal_tolerance:
-            self.stop()
-            self.state = "IDLE"
-            self.get_logger().info("Goal reached.")
-        else:
-            self.go_to_goal(x, y, yaw)
+        # ...
+        pass
         # ------------------------------------------------------------
 
 
