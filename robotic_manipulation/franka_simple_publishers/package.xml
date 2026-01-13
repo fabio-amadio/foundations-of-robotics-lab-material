@@ -3,7 +3,6 @@
 <package format="3">
   <name>franka_simple_publishers</name>
   <version>0.1.0</version>
-  <description>Python script to publish msgs to Franka Robot</description>
   <description>Educational ROS 2 package for sending references to the Franka Panda robot controller.</description>
   <maintainer email="fabioamadio93@gmail.com">Fabio Amadio</maintainer>
   <license>MIT</license>
